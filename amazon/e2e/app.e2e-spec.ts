@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('amazon App', () => {
+describe('angular-amazon App', () => {
   let page: AppPage;
 
   beforeEach(() => {
