@@ -1,3 +1,4 @@
+import { RestApiService } from './rest-api.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -9,12 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { MessageComponent } from './message/message.component';
+import { DataService } from './data.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +28,10 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    RestApiService,
+    DataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
