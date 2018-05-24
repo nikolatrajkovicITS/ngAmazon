@@ -1,3 +1,5 @@
+import { DataService } from './data.service';
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +10,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   searchTerm = '';
   isCollapsed = true;
+
+  constructor(private router: Router, private data: DataService) { }
 
   /** Return login token */
   get token() {
@@ -27,7 +31,11 @@ export class AppComponent {
     dropdown.close();
   }
 
-  logout() { }
+  logout() {
+    localStorage.clear();
+    this.router.navigate(['']);
+    this.data.user = {};
+  }
 
   search() { }
 }
